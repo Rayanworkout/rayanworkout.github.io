@@ -1,4 +1,7 @@
-/* Modern-minimal overrides for jekyll-theme-hacker */
+---
+---
+
+@import "{{ site.theme }}";
 
 :root{
   --bg: #0b0f14;
