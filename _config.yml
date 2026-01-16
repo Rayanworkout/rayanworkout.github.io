@@ -1,4 +1,4 @@
 title: MonkeyPatcher
 description: Programming & networking notes
-theme: minima
+theme: jekyll-theme-hacker
 permalink: /:year/:month/:day/:title/
