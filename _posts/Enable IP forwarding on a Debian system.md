@@ -1,5 +1,8 @@
-
-#networking #commands
+---
+layout: post
+title: "Enable IP forwarding on a Debian system"
+tags: [networking, commands]
+---
 
 ```bash
 sudo mkdir -p /etc/sysctl.d
