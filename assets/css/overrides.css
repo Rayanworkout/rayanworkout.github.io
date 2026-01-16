@@ -1,0 +1,166 @@
+/* Modern-minimal overrides for jekyll-theme-hacker */
+
+:root{
+  --bg: #0b0f14;
+  --panel: rgba(255,255,255,0.04);
+  --panel-strong: rgba(255,255,255,0.06);
+  --text: rgba(255,255,255,0.9);
+  --muted: rgba(255,255,255,0.65);
+  --border: rgba(255,255,255,0.10);
+  --link: #7ee787;
+  --shadow: 0 12px 30px rgba(0,0,0,0.35);
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f7f8fa;
+    --panel: rgba(0,0,0,0.03);
+    --panel-strong: rgba(0,0,0,0.05);
+    --text: rgba(0,0,0,0.9);
+    --muted: rgba(0,0,0,0.62);
+    --border: rgba(0,0,0,0.10);
+    --link: #116329;
+    --shadow: 0 14px 30px rgba(0,0,0,0.10);
+  }
+}
+
+html, body{
+  background: radial-gradient(1200px 700px at 15% -10%, rgba(126,231,135,0.18), transparent 60%),
+              radial-gradient(900px 600px at 90% 0%, rgba(88,166,255,0.14), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep Hacker readable but calmer */
+.container{
+  max-width: 900px;
+}
+
+/* Header: compact, modern */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.brand h1{
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.brand .tagline{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Links */
+a{
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+/* Buttons: pill, subtle */
+.actions{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn{
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  line-height: 1;
+  box-shadow: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.btn:hover{
+  background: var(--panel-strong);
+  border-color: color-mix(in srgb, var(--border) 60%, white 40%);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn.btn-github .icon{
+  /* If hacker theme injects an icon sprite, this keeps spacing tidy */
+  margin-right: 6px;
+}
+
+/* Main content as a clean “card” */
+#main_content{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px 26px;
+  margin: 22px 0 40px;
+}
+
+/* Typography improvements */
+#main_content h1, #main_content h2, #main_content h3{
+  letter-spacing: -0.02em;
+}
+
+#main_content p, #main_content li{
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15.5px;
+}
+
+#main_content code{
+  background: rgba(127,127,127,0.18);
+  border: 1px solid rgba(127,127,127,0.22);
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+
+#main_content pre{
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  overflow: auto;
+}
+
+/* Make lists & separators feel lighter */
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 22px 0;
+}
+
+/* Mobile: stack header nicely */
+@media (max-width: 720px){
+  .site-header .container{
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #main_content{
+    padding: 20px 18px;
+  }
+}
