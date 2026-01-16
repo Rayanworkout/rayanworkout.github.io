@@ -5,8 +5,9 @@ tags: [linux, debian, memory, system]
 ---
 
 ### Check free memory for the host
+
 ```
-free -h # or free -m for whole machine
+free -h
 ```
 
 Example output.
