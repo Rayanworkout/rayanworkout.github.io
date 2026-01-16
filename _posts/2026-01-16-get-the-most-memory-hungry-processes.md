@@ -6,13 +6,13 @@ tags: [linux, debian, memory, system]
 
 ### Check free memory for the host
 
-```
+```bash
 free -h
 ```
 
 Example output.
 
-```
+```bash
 free -h
                total        used        free      shared  buff/cache   available
 Mem:           512Mi       362Mi        66Mi        24Ki        83Mi       149Mi
@@ -20,13 +20,13 @@ Swap:          512Mi        74Mi       437Mi
 
 ```
 ### Check the X first processes using the most memory
-```
+```bash
 ps -eo pid,comm,rss,%mem --sort=-rss | head -n 15
 ```
 
 Exemple output
 
-```
+```bash
 PID COMMAND           RSS %MEM
      85 AdGuardHome     353412 67.4
      94 tailscaled      30768  5.8
